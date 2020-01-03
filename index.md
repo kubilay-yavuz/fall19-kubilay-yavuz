@@ -13,3 +13,8 @@
 # HW4
 
 [HW4](HW4/IE582_HW4.html) is here. This was a group homework, I did it with Ertuğrul Arda who is my group member.
+
+# Project
+
+[Our Term Project code is here.](Project/IE582_Project_Code.html) 
+[Our Term Project report is here.](Project/IE582_Project_Report.html)
