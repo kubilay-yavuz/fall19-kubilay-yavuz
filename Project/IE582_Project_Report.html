@@ -11836,7 +11836,7 @@ Ertuğrul Arda                  2015402147</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The data can also be seen in the code HERE.</p>
+<p>The data can also be seen in the code <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Matches-data-has-wrong-team-names,-we-fixed-them">here</a>.</p>
 <h4 id="1.-matches.csv">1. matches.csv<a class="anchor-link" href="#1.-matches.csv">&#182;</a></h4><p>The matches data consists of the following columns and the column names are self-explanatory. <br>
 •   match_awayteam_id<br>
 •   match_hometeam_id<br>
@@ -11959,7 +11959,7 @@ Ertuğrul Arda                  2015402147</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have searched for the previous works on the field and examined the paper “A machine learning framework for sports result prediction” written by Rory P. Bunker and Fadi Thabtah((((1)))). In this paper, machine learning algorithms are built in order to predict the game results of the NFL in the USA. They proposed their model which is based on the Neural Network (NN) models and examined the previous studies in the field. The paper summarizes the followings:</p>
+<p>We have searched for the previous works on the field and examined the paper “A machine learning framework for sports result prediction” written by Rory P. Bunker and Fadi Thabtah<a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Report.html#References-and-Code">[1]</a>. In this paper, machine learning algorithms are built in order to predict the game results of the NFL in the USA. They proposed their model which is based on the Neural Network (NN) models and examined the previous studies in the field. The paper summarizes the followings:</p>
 <p>•    Purucker conducts an analysis of the NFL matches and came up with an artificial neural network (ANN) model. In this model, gained yards, gained rushing yards, turnover margin, time of possession and betting line odds are considered as the features to predict future matches. Clustering algorithms are used in the determination of the goodness of the teams. The model achieved 61% of accuracy when the related experts have achieved about 72% accuracy.</p>
 <p>•   Another study which is the improved version of Purucker has been conducted by Kahn and the used features were differences between the total yards achieved between the teams, rushing yard differences turnover differences and the classes of home or away teams (names). This model had worked as good as the predictions of the experts in the field.</p>
 <p>•   McCabe and Trevathan have worked for the prediction of the matches in English Premier League (EPL) together with the rugby matches in the USA and Australia and achieved about 65% of accuracy on average. 
@@ -12002,7 +12002,7 @@ Not only in the football matches, but in the other sports fields like Olympic Ga
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As it is mentioned in the introduction part, we concluded that the files are defined as pre-game and after-game. Our aim was to create a single data frame that includes information about the subject teams of the match. In our first try, we used all of the matches that a team plays, and as aggregation function, we used only mean. We approached the datasets as their definition:</p>
 <p>•   Pre-game datasets are used with little manipulation. The odds in the bets data frame are  used to calculate the normalized probability of the teams, and append to the corresponding row. (i.e. from bets.csv data frame, only the probabilities are extracted.)</p>
-<p>•   After-game datasets are used with heavy manipulation. The matches.csv, booking.csv, and stats.csv datasets are used and manipulated. This manipulation can be seen in HERE.</p>
+<p>•   After-game datasets are used with heavy manipulation. The matches.csv, booking.csv, and stats.csv datasets are used and manipulated. This manipulation can be seen from <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Pulling-the-match-ids-of-all-teams.">here</a> .</p>
 
 </div>
 </div>
@@ -12020,7 +12020,7 @@ Not only in the football matches, but in the other sports fields like Olympic Ga
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We decided to create the dataset using the teams that are going to play. We firstly filtered the data for the English premier league. Then, we extracted the match ids that teams played and whether they are home or away at the match for that match id.(HERE)</p>
+<p>We decided to create the dataset using the teams that are going to play. We firstly filtered the data for the English premier league. Then, we extracted the match ids that teams played and whether they are home or away at the match for that match id <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Pulling-the-match-ids-of-all-teams.">here</a>.</p>
 <p>The reason we extracted the away and home information is to get the related concurrent and old data easily for the subject team for a match. Therefore, we extracted information from each data frame as follows:</p>
 
 </div>
@@ -12035,7 +12035,7 @@ Not only in the football matches, but in the other sports fields like Olympic Ga
 <p>•   From the merged data frame, we aggregated the mean and summation of the last 5 matches each variable, such as scores, tackles, saves, shots, corners, and others.</p>
 <p>•   Furthermore, we joined the aggregated booking data and the merged data.</p>
 <p>•   From the bets data frame, we pulled the last five odds for the subject match and their normalized probabilities. Then, we joined the merged data frame and the current bet data frame.
-These operations are made HERE.</p>
+These operations are made <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#The-for-loop-we-aggregated-the-last-five-matches">here</a>.</p>
 <p>Overall, this approach left us with 333 matches. Without merging the bet data we were able to have nearly 700 matches, but not all of these matches have bet info in the bets data frame, and the name of the teams stayed as a categorical variable. However, in the baseline models, we didn’t use the names because the models don’t allow categorical variables.</p>
 
 </div>
@@ -12054,12 +12054,13 @@ These operations are made HERE.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We wanted to indicate that our model performs better than a basic model. Thus, we decided a baseline, each of the matches’ results are predicted as home, away, or draw. Here are the results:</p>
-<p>•   If we predict each match as home, the corresponding RPS is 0.6912.</p>
-<p>•   If each match is predicted as away, the RPS becomes 0.30897.</p>
-<p>•   For the draw decision, we will have an RPS of 0.4265.</p>
-<p>Furthermore, we decided to use Logistic Regression as our baseline model. Training the data with Logistic regression, we had an RPS result of 0.2421. <a href="">here</a>Therefore, we had to perform better than these baselines. Following that, we wanted SVM to give a shot. We had an RPS result of 0.2355.(((((HERE))))</p>
-<p>Afterward, we decided to use “catboost” which is a gradient boosting decision tree algorithm. There were other gradient boosting decision tree algorithms but the GPU training integration feature of catboost comes in handy when one has limited time. ((HERE))</p>
-<p>At first, without cross-validation, we were able to have an RPS of 0.19185. Then, we performed a stratified k-fold cross-validation. As a result of the cross-validation, we were able to improve the RPS score to 0.17745. To mention, we used log-loss as the training metric. ((HERE))</p>
+<p>•   If we predict each match as home, the corresponding RPS is <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Baseline-results">0.36764</a>.</p>
+<p>•   If each match is predicted as away, the RPS becomes <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Baseline-results">0.45588</a>.</p>
+<p>•   For the draw decision, we will have an RPS of <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Baseline-results">0.54411</a>.</p>
+<p>Furthermore, we decided to use Logistic Regression as our baseline model. Training the data with Logistic regression, we had an RPS result of <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Baseline-results">0.2638</a>. Therefore, we had to perform better than these baselines. Following that, we wanted SVM to give a shot. We had an RPS result of <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Baseline-results">0.21554</a>.</p>
+<p>Afterward, we decided to use “catboost” which is a gradient boosting decision tree algorithm. There were other gradient boosting decision tree algorithms but the GPU training integration feature of catboost comes in handy when one has limited time.<a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Report.html#References-and-Code">[2]</a></p>
+<p>At first, without cross-validation, we were able to have an RPS of 0.19185. Then, we performed a stratified k-fold cross-validation. As a result of the cross-validation, we were able to improve the RPS score to <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Importance-Plotting">0.54411</a>.</p>
+<p>To mention, we used <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Importance-Plotting">log-loss</a> as the training metric.</p>
 
 </div>
 </div>
@@ -12093,7 +12094,7 @@ These operations are made HERE.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since the submission has been done several times, we have prepared a base prediction code block and it is updated for every submission. ((HERE)).</p>
+<p>Since the submission has been done several times, we have prepared a base prediction code block and it is updated for every submission. <a href="https://bu-ie-582.github.io/fall19-kubilay-yavuz/Project/IE582_Project_Code.html#Data-Manipulation-for-the-test-data">Here is the code block</a>.</p>
 <p>For the evaluation of the results, we have considered the model built for the last submission.</p>
 <p>As it is mentioned in the approach part, our model gave us an RPS of 0.19~ before the cross-validation. After the cross-validation, we had an RPS of 0.17~. Because the resulting model is a decision tree, we are able to see the importance of each variable. As it is as follows in Figure</p>
 
@@ -12199,7 +12200,11 @@ These operations are made HERE.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="References-and-Code">References and Code<a class="anchor-link" href="#References-and-Code">&#182;</a></h3>
+<h3 id="References-and-Code">References and Code<a class="anchor-link" href="#References-and-Code">&#182;</a></h3><ol>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S2210832717301485">A machine learning framework for sport result prediction, Rory P.Bunker, Fadi Thabtah</a></li>
+<li><a href="https://catboost.ai/">CatBoost</a></li>
+</ol>
+
 </div>
 </div>
 </div>
